@@ -108,7 +108,10 @@ To get a specific list, use:
     foursquare.lists.find("LIST_ID")
 
 To create a list, use:
-	foursquare.lists.create({:name=>"foo list",:description=>"simple description",:collaborative=>true,:photoId="IHR8THISPHT"}})
+	list = foursquare.lists.create({:name=>"foo list",:description=>"simple description",:collaborative=>false,:photoId="IHR8THISPHT"}})
+
+To update a list, you can use the list you just created:
+	list.update({:collaborative=>true,:photoId="IHR8THISPHT"}})
 
 
 ### Logging

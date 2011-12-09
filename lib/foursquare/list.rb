@@ -101,6 +101,12 @@ module Foursquare
         Foursquare::ListItem.new(@foursquare, item)
       end
     end
-    
+    def update(options={})
+      if json = @foursquare.post("lists/#{self.id}/update", options)
+        Foursquare::List.new(@foursquare, json["list"])
+      else
+        nil
+      end
+    end
   end
 end
