@@ -13,6 +13,14 @@ module Foursquare
       Foursquare::User.new(@foursquare, @json["user"])
     end
     
+    def created_at
+      @json["createdAt"]
+    end
+    
+    def updated_at
+      @json["updatedAt"]
+    end
+    
     def venue
       Foursquare::Venue.new(@foursquare, @json["venue"])
     end
